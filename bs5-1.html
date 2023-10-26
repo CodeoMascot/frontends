@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    body {
+      padding-top: 4.5rem;
+    }
+
+    .cm-mobnav>div>div {
+      flex: 1 1 0px;
+      font-size: 10px;
+    }
+
+    .cm-mobnav a.active {
+      color: var(--bs-link-color);
+    }
+
+    .cm-nav {
+      box-shadow: #ccc -0px 3px 7px -2px
+    }
+
+    .cm .offcanvas,
+    .offcanvas-lg,
+    .offcanvas-md,
+    .offcanvas-sm,
+    .offcanvas-xl,
+    .offcanvas-xxl {
+      --bs-offcanvas-width: 290px;
+    }
+
+    /* Tablet and smaller < lg */
+    @media (max-width: 991.98px) {
+      .cm-mobnav {
+        position: fixed;
+        bottom: 0;
+        box-shadow: #ccc 0px -3px 7px -2px;
+      }
+
+      body {
+        padding-bottom: 60px;
+      }
+
+    }
+
+    /* Laptop and beyond >= lg */
+    @media (min-width: 992px) {
+      .cm-sidebar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+        display: block !important;
+        height: calc(100vh - 80px - 10px);
+        padding-left: 0.25rem;
+        margin-left: -0.25rem;
+        overflow-y: auto;
+      }
+
+    }
+  </style>
+</head>
+
+<body class="cm">
+
+  <!-- top nav bar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-light cm-nav" aria-label="Bootmob">
+    <div class="container-xxl flex-wrap flex-lg-nowrap">
+
+      <!-- sidebar toggler -->
+      <button class="navbar-toggler me-lg-2 d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <a class="navbar-brand d-none d-lg-flex ms-lg-4" href="#">Bootmob</a>
+
+      <!-- page title only mobile -->
+      <span class="py-auto fs-3 ms-auto me-auto d-block d-lg-none">Home</span>
+
+      <!-- navbar toggler -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark">
+        <i class="bi bi-three-dots"></i>
+      </button>
+
+      <!-- navbar offcanvas -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarDark"
+        aria-labelledby="offcanvasNavbarDarkLabel">
+
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Bootmob</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end align-middle flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container-xxl">
+
+    <div class="row g-2 gx-4">
+      <div class="col-lg-3">
+        <aside class="cm-sidebar border-end pe-3">
+          <div class="offcanvas-lg offcanvas-start h-100" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bootmob</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                data-bs-target="#offcanvasExample"></button>
+            </div>
+            <div class="offcanvas-body h-100 pt-0">
+              <div class="d-flex flex-column flex-shrink-0 w-100 h-100">
+                <hr class="mt-1 d-lg-none">
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                      <i class="bi bi-house"></i>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link">
+                      <i class="bi bi-speedometer2"></i>
+                      Dashboard
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link">
+                      <i class="bi bi-cart"></i>
+                      Orders
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link">
+                      <i class="bi bi-boxes"></i>
+                      Products
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link">
+                      <i class="bi bi-people"></i>
+                      Customers
+                    </a>
+                  </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                  <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://avatars.githubusercontent.com/u/109819789" alt="" width="32" height="32"
+                      class="rounded-circle me-2">
+                    <strong>Codeo</strong>
+                  </a>
+                  <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-lg-9">
+        <main>
+          <h1>The Beginning</h1>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in dolor velit. Aenean
+            pharetra arcunec consectetur porttitor. Ut iaculis, ex vitae venenatis convallis, enim mauris varius nisl, a
+            pharetra felismauris a mauris. Sed diam odio, dapibus vitae dolor non, mollis placerat nisl.</p>
+
+          <h3 class="mt-0">More Details</h3>
+          <p>Sed porttitor, ligula in interdum varius, metus arcu molestie massa, et dignissim metus felis ac nulla. Nam
+            ut ante odio. Proin quis risus non mauris convallis pretium sit amet maximus felis. Morbi a pellentesque
+            dui,
+            ultrices fermentum justo. Curabitur nulla sapien, elementum eget dolor ac, finibus bibendum nunc. Ut sit
+            amet
+            nulla quis purus malesuada posuere et dapibus leo. Phasellus tellus mi, interdum quis iaculis in, feugiat
+            eget
+            nisl. Sed pulvinar dui a posuere porttitor. Nunc varius nunc a efficitur pellentesque. Nulla pellentesque
+            arcu
+            eu dui bibendum varius.</p>
+          <p>Nunc vestibulum ante vel viverra lobortis. Vivamus ipsum velit, aliquet at eleifend sit amet, fringilla sed
+            dolor. Proin sed tortor eget lorem fringilla iaculis eget at eros. Aenean ac porta dui. Duis eget est massa.
+            Duis tincidunt libero a iaculis faucibus. Donec consequat metus sed neque mollis, ut consectetur leo
+            sollicitudin. Phasellus nec pellentesque leo, ac interdum justo. Maecenas at imperdiet purus. Nulla ac massa
+            lorem. In ligula enim, laoreet consectetur ipsum et, tempus sollicitudin metus. Morbi tincidunt euismod
+            luctus. Mauris ac ante vestibulum, pretium lacus quis, vestibulum libero. Nullam lacinia, tellus sed
+            pellentesque pellentesque, magna nisi scelerisque est, id maximus elit tortor vel eros.</p>
+          <p>Nunc eu euismod ipsum. Cras velit lorem, pulvinar nec bibendum sit amet, gravida a est. Quisque id augue et
+            ex tempor egestas eget et dui. Morbi semper pulvinar aliquet. Orci varius natoque penatibus et magnis dis
+            parturient montes, nascetur ridiculus mus. Etiam commodo urna nec nisl vestibulum, non accumsan nibh
+            consectetur. Nullam maximus ultricies molestie. Vestibulum nec sagittis urna, in posuere eros. Praesent
+            vitae
+            est vel nulla pretium efficitur et non lorem. Proin molestie lectus sit amet ex cursus porta. Nulla
+            facilisi.
+            Duis luctus felis sit amet massa aliquet molestie.</p>
+          <p>Suspendisse ac urna est. Donec quis pharetra est, pharetra venenatis arcu. Mauris urna eros, mollis in
+            interdum id, mattis et odio. Maecenas libero magna, malesuada semper pharetra vitae, fringilla non ipsum.
+            Proin magna quam, gravida a pellentesque nec, lacinia eget orci. Suspendisse pretium congue lorem non
+            condimentum. Quisque fermentum blandit laoreet. Pellentesque congue urna luctus, elementum libero in,
+            euismod
+            enim. Suspendisse potenti. Vestibulum imperdiet ex ac nisl semper, a scelerisque urna vehicula. Quisque
+            dolor
+            sapien, varius at dolor ac, elementum commodo ipsum. Pellentesque rhoncus tristique placerat. Nunc finibus
+            congue fringilla.</p>
+          <p>Suspendisse ac urna est. Donec quis pharetra est, pharetra venenatis arcu. Mauris urna eros, mollis in
+            interdum id, mattis et odio. Maecenas libero magna, malesuada semper pharetra vitae, fringilla non ipsum.
+            Proin magna quam, gravida a pellentesque nec, lacinia eget orci. Suspendisse pretium congue lorem non
+            condimentum. Quisque fermentum blandit laoreet. Pellentesque congue urna luctus, elementum libero in,
+            euismod
+            enim. Suspendisse potenti. Vestibulum imperdiet ex ac nisl semper, a scelerisque urna vehicula. Quisque
+            dolor
+            sapien, varius at dolor ac, elementum commodo ipsum. Pellentesque rhoncus tristique placerat. Nunc finibus
+            congue fringilla.
+          </p>
+
+          <!-- only on laptops -->
+          <footer class="d-none d-lg-block bg-light">
+            <div class="container pt-4 text-muted">
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
+                <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex fs-4">
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-linkedin"></i></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-twitter"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+
+        </main>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <!-- mobile footer fixed bottom -->
+  <footer class="cm-mobnav bg-light d-lg-none w-100">
+    <div class="mb-1 d-flex flex-row flex-nowrap align-items-center justify-content-evenly w-100 text-center">
+
+      <div>
+        <a href="#" class="nav-link">
+          <span class="fs-2 d-block mx-auto"><i class="bi bi-speedometer2"></i></span>
+          Dashboard
+        </a>
+      </div>
+      <div>
+        <a href="#" class="nav-link">
+          <span class="fs-2 d-block mx-auto"><i class="bi bi-cart"></i></span>
+          Orders
+        </a>
+      </div>
+      <div>
+        <a href="#" class="active nav-link">
+          <span class="fs-2 d-block mx-auto"><i class="bi bi-house"></i></span>
+          Home
+        </a>
+      </div>
+      <div>
+        <a href="#" class="nav-link">
+          <span class="fs-2 d-block mx-auto"><i class="bi bi-boxes"></i></span>
+          Products
+        </a>
+      </div>
+      <div>
+        <a href="#" class="nav-link">
+          <span class="fs-2 d-block mx-auto"><i class="bi bi-people"></i></span>
+          Customers
+        </a>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
