@@ -13,7 +13,43 @@
   <div id="demo">test 1</div>
   <script>
     const statusSpan = document.querySelector('#demo');
+    statusSpan.innerHTML = "<br>JS: Works";<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 5 Boilerplate</title>
+</head>
+
+<body>
+  <div>Ver 1</div>
+  <div id="demo">test 1</div>
+  <script>
+    const statusSpan = document.querySelector('#demo');
     statusSpan.innerHTML = "<br>JS: Works";
+
+    const notificationSupported = 'Notification' in window;
+    statusSpan.innerHTML = (`${statusSpan.innerHTML}<br><br>Notify: ${notificationSupported}`);
+
+    const cmGetRegistration = async () => {
+      const registration = await navigator.serviceWorker.getRegistration();
+      const pushSubscription = await registration.pushManager.getSubscription();
+      if (pushSubscription) {
+        statusSpan.innerHTML = (`${statusSpan.innerHTML}<br><br>Push: ${pushSubscription.endpoint}`);
+      }
+      else {
+        statusSpan.innerHTML = (`${statusSpan.innerHTML}<br><br>Push: Null`);
+      }
+    }
+    cmGetRegistration();
+
+
+  </script>
+</body>
+
+</html>
     const notificationSupported = 'Notification' in window;
     statusSpan.innerHTML = (`${statusSpan.innerHTML}<br><br>Notify: ${notificationSupported}`);
 
