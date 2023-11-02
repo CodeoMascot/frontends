@@ -47,14 +47,14 @@
       registerServiceWorker();
     }
 
-    pushButton.addEventListener('click',  async () => {
+    pushButton.addEventListener('click', async () => {
       const apiUrl = 'https://ca9akfgcre.execute-api.us-east-1.amazonaws.com';
 
       const response = await (await fetch(`${apiUrl}/public-key`)).json();
       const publicKey = response.publicKey;
 
       const registration = await navigator.serviceWorker.getRegistration();
-      
+
       await subscribeToPushMessages(registration, publicKey);
 
       const pushSubscription = await registration.pushManager.getSubscription();
@@ -109,17 +109,28 @@
     });
 
 
-    sendButton.addEventListener('click', () => {
+    sendButton.addEventListener('click', async () => {
+      const registration = await navigator.serviceWorker.getRegistration();
+
+      const title = 'CM PWA Notif Title'
       const options = {
         body: 'Simple Chrome Desktop Notification',
         dir: 'ltr',
-        image: 'https://cdn-icons-png.flaticon.com/512/2922/2922546.png'
+        icon: 'https://cdn-icons-png.flaticon.com/512/2922/2922546.png'
       };
-      const notification = new Notification('Notification', options);
 
+      if ('showNotification' in registration) {
+        registration.showNotification(title, options);
+      }
+      else {
+        new Notification(title, options);
+      }
+
+      /*
       notification.onclick = function () {
         window.open('https://www.google.com');
       };
+      */
     });
 
 
