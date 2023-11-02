@@ -39,7 +39,8 @@
       statusSpan.innerHTML = (`${statusSpan.innerHTML}<br><br>SW: Available`);
 
       const registerServiceWorker = async () => {
-        await navigator.serviceWorker.register('./sw1.js');
+        await navigator.serviceWorker.register('./sw1.js',
+        {scope: '/frontends/'});
         const registration = await navigator.serviceWorker.ready;
         if (registration.active) {
           statusSpan.innerHTML = (`${statusSpan.innerHTML}<br><br>SW: Active`);
