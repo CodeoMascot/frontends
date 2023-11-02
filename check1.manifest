@@ -11,7 +11,7 @@
     ],
     "orientation": "portrait",
     "dir": "ltr",
-    "scope": "/",
+    "scope": "/frontends/notify.html",
     "theme_color": "#d21919",
     "lang": "en-US",
     "description": "Base PWA app for Web App projects.",
