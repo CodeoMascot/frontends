@@ -2,7 +2,6 @@
     "name": "CheckProgressive Web App",
     "short_name": "CheckPWA",
     "id": "check-pwa",
-    "start_url": "/?source=check-pwa",
     "background_color": "#93d3be",
     "display": "standalone",
     "display_override": [
@@ -11,7 +10,8 @@
     ],
     "orientation": "portrait",
     "dir": "ltr",
-    "scope": "/frontends/notify.html",
+    "scope": "/frontends/",
+    "start_url": "/frontends/notify.html",
     "theme_color": "#d21919",
     "lang": "en-US",
     "description": "Base PWA app for Web App projects.",
